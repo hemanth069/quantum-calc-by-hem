@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Quantum Calc | Advanced Web Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script src="script.js" defer></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>">
+</head>
+<body>
+  <header>
+    <h1>Quantum Calc</h1>
+    <p>Advanced Web Calculator with Smooth Animations</p>
+  </header>
+  
+  <div class="calculator-grid">
+    <div class="output">
+      <div data-previous-operand class="previous-operand"></div>
+      <div data-current-operand class="current-operand"></div>
+    </div>
+    <button data-all-clear class="span-two ac-btn">AC</button>
+    <button data-delete class="del-btn">DEL</button>
+    <button data-operation class="operation-btn">÷</button>
+    <button data-number>7</button>
+    <button data-number>8</button>
+    <button data-number>9</button>
+    <button data-operation class="operation-btn">×</button>
+    <button data-number>4</button>
+    <button data-number>5</button>
+    <button data-number>6</button>
+    <button data-operation class="operation-btn">-</button>
+    <button data-number>1</button>
+    <button data-number>2</button>
+    <button data-number>3</button>
+    <button data-operation class="operation-btn">+</button>
+    <button data-number>.</button>
+    <button data-number>0</button>
+    <button data-equals class="span-two equals-btn">=</button>
+  </div>
+  
+  <footer>
+    <p>Press DEL to backspace | Double-click AC to reset memory</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+:root {
+  --primary-color: #3a0ca3;
+  --secondary-color: #4cc9f0;
+  --accent-color: #f72585;
+  --dark-color: #1a1a2e;
+  --light-color: #f8f9fa;
+  --button-hover: rgba(255, 255, 255, 0.9);
+  --button-active: rgba(255, 255, 255, 0.7);
+  --operation-btn: #7209b7;
+  --equals-btn: #4361ee;
+  --del-btn: #f72585;
+  --ac-btn: #4a4e69;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+  color: var(--light-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+  gap: 8px;
+  padding: 20px;
+  background-color: rgba(26, 26, 46, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+              0 0 0 2px var(--secondary-color),
+              0 0 20px rgba(76, 201, 240, 0.3);
+  transition: all 0.3s ease;
+}
+
+.calculator-grid:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6),
+              0 0 0 2px var(--accent-color),
+              0 0 30px rgba(247, 37, 133, 0.4);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+  color: var(--dark-color);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-grid > button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.calculator-grid > button:active {
+  background-color: var(--button-active);
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.operation-btn {
+  background-color: var(--operation-btn) !important;
+  color: white !important;
+}
+
+.equals-btn {
+  background-color: var(--equals-btn) !important;
+  color: white !important;
+}
+
+.del-btn {
+  background-color: var(--del-btn) !important;
+  color: white !important;
+}
+
+.ac-btn {
+  background-color: var(--ac-btn) !important;
+  color: white !important;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 15px;
+  word-wrap: break-word;
+  word-break: break-all;
+  margin-bottom: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  height: 24px;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.2rem;
+  transition: all 0.2s ease;
+}
+
+footer {
+  margin-top: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* Animation classes */
+@keyframes buttonPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.button-press {
+  animation: buttonPress 0.2s ease;
+}
+
+@keyframes resultPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.result-pop {
+  animation: resultPop 0.3s ease;
+}
